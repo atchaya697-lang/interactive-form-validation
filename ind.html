@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Form Validation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section id="form-card" class="card">
+      <h1 class="title">Register</h1>
+
+      <form id="registration-form" novalidate>
+    
+        <label for="name" class="label">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
+        <div class="error-msg" id="name-error" aria-live="polite"></div>
+
+        
+        <label for="email" class="label">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+        <div class="error-msg" id="email-error" aria-live="polite"></div>
+
+        
+        <label for="password" class="label">Password</label>
+        <input id="password" name="password" type="password" autocomplete="new-password" required />
+        <div class="password-meta">
+          <div id="password-strength" class="strength">Strength: <span id="strength-text">—</span></div>
+          <div id="password-hint" class="hint">Use at least 8 chars, include a number & special char.</div>
+        </div>
+        <div class="error-msg" id="password-error" aria-live="polite"></div>
+
+    
+        <label for="confirm-password" class="label">Confirm Password</label>
+        <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" required />
+        <div class="error-msg" id="confirm-error" aria-live="polite"></div>
+
+        
+        <button id="submit-btn" type="submit" disabled>Submit</button>
+      </form>
+
+      <div id="success-box" class="success hidden" role="status" aria-live="polite">
+        Registration successful ✅
+      </div>
+
+      <footer class="small">This demo stores entries in <code>localStorage</code> only.</footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
